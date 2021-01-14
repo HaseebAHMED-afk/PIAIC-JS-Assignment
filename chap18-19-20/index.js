@@ -1,0 +1,32 @@
+let courses = [];
+
+let view_btn = document.getElementById('view_course')
+
+let add_btn = document.getElementById('add_course');
+
+let edit_btn = document.getElementById('edit_course');
+
+view_btn.addEventListener('click', () => {
+    alert(courses)
+})
+
+add_btn.addEventListener('click', () => {
+
+    for (let index = 0; index < 5; index++) {
+        courses[index] = prompt(`Course${index+1}`,'Add a course')  
+    }
+})
+
+edit_btn.addEventListener('click' , () => {
+    let course_name = prompt('Enter a course to edit')
+    let oldCourseIndex = courses.indexOf(course_name)
+    let flag = courses.includes(course_name)
+
+    if(flag===true){    
+        let new_course = prompt(course_name,'Enter a new course name')
+        courses.splice(oldCourseIndex,1,new_course)
+    }
+    else{
+        alert("Course doesn't not exist")
+    }
+})
