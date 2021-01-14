@@ -21,7 +21,7 @@ edit_btn.addEventListener('click' , () => {
     let flag = courses.includes(course_name)
 
     if(flag===true){    
-        let new_course = prompt('Enter a new course name')
+        let new_course = prompt(course_name,'Enter a new course name')
         courses.splice(oldCourseIndex,1,new_course)
     }
     else{
